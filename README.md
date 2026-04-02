@@ -4,7 +4,7 @@ Extensive experiments on synthetic and real-world noisy datasets demonstrate tha
 
 # Pipeline
 
-![framework](figure_MINE.png)
+![framework](Table1_MINE.png)
 
 # Installation
 ```
@@ -25,29 +25,25 @@ You can download Web-Aircraft, Web-Car, and Web-Bird from [here](https://github.
 An example shell script to run MINE-hard on CIFAR-100N :
 
 ```python
-python MINE-hard.py --gpu 7  --warmup-epoch 200 --epoch 300 --batch-size 128 --lr 0.01 --warmup-lr 0.05  --noise-type symmetric --closeset-ratio 0.1 --lr-decay cosine:200,5e-5,300 --opt sgd --dataset cifar80no --topk 2 --log MINE-hard
+python MINE-hard.py --gpu 0  --warmup-epoch 200 --epoch 300 --batch-size 128 --lr 0.01 --warmup-lr 0.05  --noise-type symmetric --closeset-ratio 0.1 --lr-decay cosine:200,5e-5,300 --opt sgd --dataset cifar80no --topk 2 --log MINE-hard
 
 ```
 An example shell script to run MINE-soft on CIFAR-100N :
 
 ```python
-python MINE-hard.py --gpu 7  --warmup-epoch 200 --epoch 300 --batch-size 128 --lr 0.01 --warmup-lr 0.05  --noise-type symmetric --closeset-ratio 0.1 --lr-decay cosine:200,5e-5,300 --opt sgd --dataset cifar80no --topk 2 --log MINE-soft
+python MINE-hard.py --gpu 0  --warmup-epoch 200 --epoch 300 --batch-size 128 --lr 0.01 --warmup-lr 0.05  --noise-type symmetric --closeset-ratio 0.1 --lr-decay cosine:200,5e-5,300 --opt sgd --dataset cifar80no --topk 2 --log MINE-soft
 ```
 
 
 # Results on CIFAR100N:
 
-![framework](Table1_MINE.png)
+![framework](Table2_MINE.png)
 
 # Results on CIFAR80N:
 
-![framework](Table2_MINE.png)
-
-# Results on CIFAR100N with instance-dependent (IDN) noise:
-
 ![framework](Table3_MINE.png)
 
-# Results on CIFAR100N with BadLabel (BL) noise:
+# Results on CIFAR100N with instance-dependent (IDN) and BadLabel (BL) noise:
 
 ![framework](Table4_MINE.png)
 
