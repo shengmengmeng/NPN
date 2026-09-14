@@ -131,7 +131,7 @@ def robust_train(net, optimizer, trainloader, n_classes, candidate_count, config
         logits_s = outputs_s['logits'] if type(outputs) is dict else outputs
         L_CR = F.cross_entropy(logits_s, pesudo)
 
-        loss = config.alpha * L_NL + config.alpha * L_CR + L_PLL
+        loss = config.alpha * L_NL + config.beta * L_CR + L_PLL
 
         optimizer.zero_grad()
         loss.backward()
